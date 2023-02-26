@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">EPlanet</string>
+    <string name="search">ПОИСК</string>
+    <string name="favorites">ИЗБРАННОЕ</string>
+    <string name="bookmarks">ЗАКЛАДКИ</string>
+    <string name="history">ИСТОРИЯ</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
