@@ -14,11 +14,11 @@ class FavoritesFragment : Fragment() {
         fun newInstance() = FavoritesFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: FavoritesViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(FavoritesViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

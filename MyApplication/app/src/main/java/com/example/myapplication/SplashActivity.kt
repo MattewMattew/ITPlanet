@@ -22,25 +22,25 @@ private val Context.isConnected: Boolean
             .activeNetworkInfo?.isConnected == true
     }
 class SplashActivity : AppCompatActivity() {
-    lateinit var mService: RetrofitServices
+//    lateinit var mService: RetrofitServices
     lateinit var loadBar: ImageView
-    lateinit var listNat: MutableList<ListNatural>
+//    lateinit var listNat: MutableList<ListNatural>
 //    lateinit var listNat: MutableList<ListNatural>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        mService = Common.retrofitService
+//        mService = Common.retrofitService
         loadBar = findViewById(R.id.loadBar)
-        mService.getList().enqueue(object : Callback<MutableList<ListNatural>> {
-            override fun onFailure(call: Call<MutableList<ListNatural>>, t: Throwable) {
-                Log.i("MyLogger", t.toString())
-            }
-            override fun onResponse(call: Call<MutableList<ListNatural>>, response: Response<MutableList<ListNatural>>){
-                listNat = response.body() as MutableList<ListNatural>
-                Log.i("MyLogger", "$listNat")
-                Log.i("MyLogger", listNat[0].image)
-            }
-        })
+//        mService.getList().enqueue(object : Callback<MutableList<ListNatural>> {
+//            override fun onFailure(call: Call<MutableList<ListNatural>>, t: Throwable) {
+//                Log.i("MyLogger", t.toString())
+//            }
+//            override fun onResponse(call: Call<MutableList<ListNatural>>, response: Response<MutableList<ListNatural>>){
+//                listNat = response.body() as MutableList<ListNatural>
+//                Log.i("MyLogger", "$listNat")
+//                Log.i("MyLogger", listNat[0].image)
+//            }
+//        })
         val timer = object: CountDownTimer(3000, 1){
             override fun onTick(p0: Long) {
                 loadBar.rotation = loadBar.rotation + 3
