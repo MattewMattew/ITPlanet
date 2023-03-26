@@ -33,7 +33,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:scaleType="fitXY" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@mipmap/ic_launcher_foreground" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -44,7 +45,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="25dp"
             android:text="RCW 86: Historical Supernova Remnant"
-            android:textColor="@android:color/black"
+            android:textColor="#9199B7"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2023-03-23"
-            android:textColor="@android:color/black"
+            android:textColor="#9199B7"
             android:textSize="14sp"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"

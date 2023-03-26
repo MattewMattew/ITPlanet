@@ -8,9 +8,9 @@ import retrofit2.http.Query
 import java.sql.Date
 
 interface RetrofitServices {
-    @GET("apod?api_key=isM6E70zCLaNhv8uz9eg5dX9thBd5ZPeWJNchaEx")
+    @GET("apod?api_key=5HuNCgwbhFWlcIha3uObB59ibXJnJjFOEZTTSPzW")
     fun getList(@Query("date") date: String): Call<ListNatural>
 
-    @GET("apod?api_key=isM6E70zCLaNhv8uz9eg5dX9thBd5ZPeWJNchaEx")
+    @GET("apod?api_key=5HuNCgwbhFWlcIha3uObB59ibXJnJjFOEZTTSPzW")
     fun getListRec(@Query("start_date") start_date: String, @Query("end_date") end_date: String): Call<MutableList<ListNatural>>
 }

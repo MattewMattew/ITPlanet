@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myapplication.retrofit.ListNatural
 
-class MyRecyclerAdapter(private val natList: MutableList<ListNatural>, private val activity: Fragment): RecyclerView.Adapter<MyRecyclerAdapter.MyRecyclerHolder>() {
+class MyRecyclerAdapter(private val natList: MutableList<ListNatural>, private val activity: Fragment, val clickListener: (ListNatural) -> Unit): RecyclerView.Adapter<MyRecyclerAdapter.MyRecyclerHolder>() {
 
         class MyRecyclerHolder(itemView: View): RecyclerView.ViewHolder(itemView){
             var name: TextView? = itemView.findViewById(R.id.txt_name_alert_elem)
@@ -24,7 +24,16 @@ class MyRecyclerAdapter(private val natList: MutableList<ListNatural>, private v
         override fun onBindViewHolder(holder: MyRecyclerHolder, position: Int) {
             holder.name?.text = natList[position].title
             holder.amount?.text = natList[position].date
-            holder.image?.let { Glide.with(activity).load(natList[position].url).into(it) }
+            if(natList[position].media_type == "video"){
+                holder.image?.setImageResource(R.mipmap.ic_launcher_foreground)
+            }else{
+                holder.image?.let { Glide.with(activity).load(natList[position].url).into(it) }
+            }
+            holder.itemView.setOnClickListener {
+                val listnew = ListNatural(natList[position].copyright,natList[position].date,natList[position].explanation, natList[position].hdurl, natList[position].media_type,
+                natList[position].service_version,natList[position].title,natList[position].url)
+                clickListener(listnew)
+            }
         }
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRecyclerHolder {
             val itemView = LayoutInflater.from(parent.context).inflate(R.layout.recycler_layout,parent,false)

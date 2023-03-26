@@ -3,6 +3,7 @@ package com.example.myapplication.retrofit
 data class ListNatural(
     val copyright: String?,
     val date: String?,
+    val explanation: String?,
     val hdurl: String?,
     val media_type: String?,
     val service_version: String?,
